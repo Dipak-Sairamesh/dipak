@@ -5,37 +5,31 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.magnify {
+			  transform: scale(2); /* Adjust scale value as needed */
+			  transition: transform 0.3s ease; /* Smooth transition for magnification */
+			}
+		  </style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-		
-			<!-- <header id="header">
-				<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-				<div class="inner">
-
-					<div style="display: flex; justify-content: center;">
-						<a href="images/avatar.jpg" class="image avatar" data-lightbox="image-1">
-							<img src="images/avatar.jpg" alt="" style="width: 200px; height: 200px;" />
-						</a>
-					</div>
-
-						</div>
-					</a>
-				</div>
-			</header> -->
-
-		<!-- Header -->
 			<header id="header">
 				<div class="inner">
+					<a href="#" class="image avatar" onclick="toggleMagnify(event)"><img src="images/avatar.jpg" alt="" /></a>
 
-					<div style="display: flex; justify-content: center;">
-						<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" style="width: 200px; height: 200px;" /></a>
-					</div>
-					
+					<script>
+					function toggleMagnify(event) {
+						event.preventDefault(); // Prevent the default anchor action
+						var img = event.currentTarget.querySelector('img'); // Get the image inside the clicked <a> tag
+						img.classList.toggle('magnify'); // Toggle the magnify class
+					}
+					</script>
+				
 				</div>
-			</header>	
+			</header>
+	
 
 		<!-- Main -->
 			<div id="main">
